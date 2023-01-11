@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+   
+    tools {
+        maven "maven"
+    }
+
+    stages {
+        stage('git_clone') {
+            steps {
+                github 'https://github.com/Deepusailatti/https-github.com-jjj999-bamboo.git'
+            }
+        }
+        stage('maven_install') {
+            steps {
+                sh 'mvn install'
+            }
+        }
